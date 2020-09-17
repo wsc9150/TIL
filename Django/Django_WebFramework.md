@@ -10,7 +10,7 @@
   5. view는 자신의 로직 처리가 끝나면 template을 사용하여 클라이언트에 전송할 HTML 파일 생성
   6. 최종 결과로 HTML 파일을 클라이언트에게 보내 응답
 
-![MVT](C:\Users\최우석\Desktop\빅데이터\마크다운\Django Webserver.assets\MVT.png)
+![MVT](C:\Users\최우석\TIL\Django\Django_WebFramework.assets\MVT.png)
 
 
 
