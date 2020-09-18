@@ -253,7 +253,9 @@ def choice(request, question_id) :
     <!--
 		결론부터 말하자면, 위에서 누른 해당 질문의 투표 선택지가 출력이 된다.
 
-		clist.choice_set.all : "clist 객체의 기본키를 외래키로 가지고 있는 choice 객체의 모든 			데이터를 가져오겠다" 라는 템플릿 언어. 즉 Question 객체의 기본키 컬럼을 외래키로 가지고 있			는 choice 데이터를 가져오겠다는 것.
+		clist.choice_set.all : "clist 객체의 기본키를 외래키로 가지고 있는 choice 객체의 모든
+		데이터를 가져오겠다" 라는 템플릿 언어. 즉 Question 객체의 기본키 컬럼을 외래키로 
+		가지고 있는 choice 데이터를 가져오겠다는 것.
 
 		radio 선택지 중 하나를 선택하고 submit을 하게 되면 
 		question_id 와 choice 라는 데이터가 url '/vote' 를 통해 전송된다.
