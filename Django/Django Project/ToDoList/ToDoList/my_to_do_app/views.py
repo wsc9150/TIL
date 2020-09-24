@@ -22,3 +22,10 @@ def createTodo(request) :
     return redirect('index')
 
 
+def deleteTodo(request) :
+    id = request.GET['todoNum']
+
+    Todo.objects.get(id = id).delete()
+
+    return redirect('index')
+
