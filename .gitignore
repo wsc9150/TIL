@@ -5,4 +5,4 @@ __pycache__
 # folder
 .ipynb_checkpoints/
 .idea/
-.venv/
+venv/
