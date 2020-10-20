@@ -2,7 +2,10 @@
 *.pyc
 __pycache__
 
+
 # folder
 .ipynb_checkpoints/
 .idea/
 venv/
+.recommenders
+.metadata
