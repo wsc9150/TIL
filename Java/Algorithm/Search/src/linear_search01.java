@@ -8,8 +8,27 @@ public class linear_search01 {
 		
 		int k = s.nextInt();
 		
-		for (int i = 0; i < x.length; i++) {
-			System.out.println(x[i]);
+		int idx = seq_search(x, k);
+		
+		if (idx == -1) 
+			System.out.println("검색값을 갖는 원소가 존재하지 않습니다.");
+		else
+			System.out.println("검색값은 x[" + idx + "]에 있습니다.");
+	}
+	
+	public static int seq_search(int []a, int key) {
+		int idx = 0;
+		
+		while (true) {
+			if (a[idx] == key) {
+				return idx;
+			}
+			
+			if (idx == a.length) {
+				return -1;
+			}
+			
+			idx += 1;
 		}
 	}
 
