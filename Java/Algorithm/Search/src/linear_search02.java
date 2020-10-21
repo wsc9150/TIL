@@ -1,12 +1,8 @@
-// linear search
-// 선형 검색
-// 직선 모양으로 늘어선 배열에서 검색하는 경우
-// 원하는 키값을 가진 원소를 찾을 때 까지 맨 앞부터 스캔하여 순서대로 검색하는 알고리즘
-// = 순차 검색 (sequential search)
+// while 대신 for 사용
 
 import java.util.*;
 
-public class linear_search01 {
+public class linear_search02 {
 
 	public static void main(String[] args) {
 		int[] x = {6, 4, 3, 2, 1, 2, 8};
@@ -22,18 +18,11 @@ public class linear_search01 {
 	}
 	
 	public static int seq_search(int []a, int key) {
-		int idx = 0;
 		
-		while (true) {
-			if (a[idx] == key) {
-				return idx;
-			}
-			if (idx == a.length) {
-				return -1;
-			}
-			
-			idx += 1;
-		}
+		for (int i = 0; i < a.length; i++) 
+			if (a[i] == key)
+				return i;
+		
+		return -1;
 	}
-
 }
