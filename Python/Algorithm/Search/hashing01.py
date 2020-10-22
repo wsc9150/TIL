@@ -5,7 +5,7 @@ class Node :
     def __init__(self, key, value, next) :
         self.key = key
         self.value = value
-        self.next = next
+        self.next = next        # 뒤쪽 노드와 연결해주는 속성
 
 
 class ChainedHash :
@@ -15,9 +15,9 @@ class ChainedHash :
 
     def hash_value(self, key) :
         if isinstance(key, int) :
-            return key % self.capacity
+            return key % self.capacity      # 키를 배열의 길이로 나눔으로써 해시값을 만들어낸다.
 
-        return int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity
+        return int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity       # 문자열 키를 숫자로 변환하는 함수
 
     def search(self, key) :
         hash = self.hash_value(key)
@@ -39,7 +39,7 @@ class ChainedHash :
             if p.key == key :
                 return False
 
-            p = p.next()
+            p = p.next
 
         temp = Node(key, value, self.table[hash])
         self.table[hash] = temp
@@ -74,4 +74,3 @@ class ChainedHash :
                 p = p.next
 
             print()
-
