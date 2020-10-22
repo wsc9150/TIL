@@ -1,11 +1,11 @@
-import java.util.Scanner;
-
 // binary search
 // 이진 검색
 // 정렬되어 있는 배열에서 사용 가능
 // 배열의 가운데 원소를 찾아 비교
 // 검색하는 원소가 값이 더 작으면 앞쪽 범위, 더 크면 뒤쪽 범위에서 다시 가운데 원소를 찾아 비교
 // 비교할 때마다 검색 범위가 반씩 줄어들게 된다. -> 선형 검색보다 빠른 검색 가능
+
+import java.util.Scanner;
 
 public class binary_search01 {
 
