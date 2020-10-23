@@ -75,6 +75,30 @@ class BinarySearchTree :
                 parent.left = p.right
             else :
                 parent.right = p.right
+        elif p.right is None :
+            if p is self.root :
+                self.root = p.left
+            elif is_left_child :
+                parent.left = p.left
+            else :
+                parent.right = p.right
+        else :
+            parent = p
+            left = p.left
+            is_left_child = True
 
-        # 진행중
+            while left.right is not None :
+                parent = left
+                left = left.right
+                is_left_child = False
+
+            p.key = left.key
+            p.value = left.value
+
+            if is_left_child :
+                parent.left = left.left
+            else :
+                parent.right = left.left
+
+        return True
 
