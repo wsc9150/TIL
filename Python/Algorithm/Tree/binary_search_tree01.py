@@ -32,12 +32,12 @@ class BinarySearchTree :
                 if node.left is None :
                     node.left = Node(key, value, None, None)
                 else :
-                    add_node(node.left, key, value)
+                    add_node(node.left, key, value)             # 자신의 키에 맞는 자리까지 비교하면서 내려간다.
             else :
                 if node.right is None :
                     node.right = Node(key, value, None, None)
                 else :
-                    add_node(node.right, key, value)
+                    add_node(node.right, key, value)            # 자신의 키에 맞는 자리까지 비교하면서 내려간다.
 
             return True
 
@@ -47,7 +47,7 @@ class BinarySearchTree :
             return add_node(self.root, key, value)          # 트리가 비어있지 않은 경우
 
     def remove(self, key) :
-        p = self.rot
+        p = self.root
         parent = None
         is_left_child = True
 
@@ -68,22 +68,22 @@ class BinarySearchTree :
                     is_left_child = False
                     p = p.right
 
-        if p.left is None :
-            if p is self.root :
-                self.root = p.right
-            elif is_left_child :
-                parent.left = p.right
-            else :
-                parent.right = p.right
-        elif p.right is None :
-            if p is self.root :
-                self.root = p.left
-            elif is_left_child :
-                parent.left = p.left
-            else :
-                parent.right = p.right
-        else :
-            parent = p
+        if p.left is None :                     # 삭제할 노드의 왼쪽 자식노드가 없을 경우
+            if p is self.root :                     # 삭제할 노드가 루트노드라면
+                self.root = p.right                 # 루트 노드를 오른쪽 자식 노드로 덮어씌운다.(저장)
+            elif is_left_child :                    # 삭제할 노드가 부모 노드 기준으로 왼쪽 자식 노드라면
+                parent.left = p.right               # 부모의 왼쪽 자식 노드를 가리키는 속성을 왼쪽 자식노드의 오른쪽 자식 노드로 바꿔버린다.
+            else :                                  # 삭제할 노드가 부모 노드 기준으로 오른쪽 자식 노드라면
+                parent.right = p.right              # 부모의 오른쪽 자식 노드를 가리키는 속성을 오른쪽 자식 노드의 자식 노드로 바꿔버린다.
+        elif p.right is None :                  # 삭제할 노드의 오른쪽 자식노드가 없을 경우
+            if p is self.root :                     # 삭제할 노드가 루트 노드라면
+                self.root = p.left                  # 루트 노드를 왼쪽 자식 노드로 덮어씌운다.
+            elif is_left_child :                    # 삭제할 노드가 부모 노드 기준으로 왼쪽 자식 노드라면
+                parent.left = p.left                # 부모의 왼쪽 자식 노드를 가리키는 속성을 왼쪽 자식 노드의 자식 노드로 바꿔버린다.
+            else :                                  # 삭제할 노드가 부모 노드 기준으로 오른쪽 자식 노드라면
+                parent.right = p.right              # 부모의 오른쪽 자식 노드를 가리키는 속성을 오른쪽 자식 노드의 오른쪽 자식 노드로 바꿔버린다.
+        else :                                  # 왼쪽 오른쪽 자식노드가 있는 경우
+            parent = p                              #
             left = p.left
             is_left_child = True
 
@@ -101,4 +101,3 @@ class BinarySearchTree :
                 parent.right = left.left
 
         return True
-
