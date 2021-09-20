@@ -1,6 +1,6 @@
 # 파일명 정렬
 # https://programmers.co.kr/learn/courses/30/lessons/17686
-# 21.01.07 재풀이
+# 21.01.17 재풀이
 
 
 def solution(files):
